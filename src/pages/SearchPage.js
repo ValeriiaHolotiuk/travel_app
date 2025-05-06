@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+const navigate = useNavigate();
 
 const SearchPage = () => {
   const [query, setQuery] = useState("");
@@ -116,9 +118,10 @@ const SearchPage = () => {
       <p>
         <span role="img" aria-label="globe">🌍</span> Book your next vacation to {weather.name} now!
       </p>
-      <button onClick={() => alert(`Booking a vacation to ${weather.name}...`)}>
-        <span role="img" aria-label="airplane">✈️</span> Book Now
+      <button onClick={() => navigate("/book")}>
+      <span role="img" aria-label="airplane">✈️</span> Book Now
       </button>
+
     </div>
   </div>
 )}
